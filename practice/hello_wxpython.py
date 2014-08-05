@@ -9,16 +9,19 @@ if __name__ == "__main__":
                      size = (400, 500), pos = (0, 30))
     frame.SetBackgroundColour("#AAAAAA")
 
-    r_panel = wx.Panel(frame, wx.ID_ANY, pos = (0, 0), size = (80, 500))
-    r_panel.SetBackgroundColour("#FFAAAA")
-    g_panel = wx.Panel(frame, wx.ID_ANY, pos = (80, 0), size = (80, 500))
-    g_panel.SetBackgroundColour("#AAFFAA")
-    b_panel = wx.Panel(frame, wx.ID_ANY, pos = (160, 0), size = (80, 500))
-    b_panel.SetBackgroundColour("#AAAAFF")
+    panel = wx.Panel(frame, wx.ID_ANY)
+    panel.SetBackgroundColour("#AFAFAF")
 
+    button_1 = wx.Button(panel, wx.ID_ANY, "Button1")
+    button_2 = wx.Button(panel, wx.ID_ANY, "Button2")
+    button_3 = wx.Button(panel, wx.ID_ANY, "Button3")
 
-    frame.CreateStatusBar()
-    frame.SetStatusText("status text test!")
+    layout = wx.BoxSizer(wx.HORIZONTAL)
+    layout.Add(button_1, proportion = 1)
+    layout.Add(button_2, proportion = 1)
+    layout.Add(button_3, proportion = 1)
+
+    panel.SetSizer(layout)
 
     frame.Show()
 
